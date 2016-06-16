@@ -1,0 +1,794 @@
+
+
+<html>
+
+<head>
+	<link rel="stylesheet" href="css/revealmyEdit.css">
+	<link rel="stylesheet" href="css/theme/solarized.css">
+</head>
+
+<style>	
+	ul.a {
+		list-style-type: disc;
+		font-family: "Lato", sans-serif;
+		font-size: 1em;
+		font-weight: normal;
+		color: #b5b0a3;
+		line-height: 0.8;
+		margin: 0 0 0 1em;
+		}
+</style>
+
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+
+
+		
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">	
+## Patient Reported Outcome Measures (PROMs)
+
+Paul Seamer  
+June 2016
+
+*This presentation was created with [reveal.js][revealjs] a HTML presentation framework*
+[revealjs]: https://github.com/hakimel/reveal.js/
+
+Note:
+this is datasets category, but one of the more interesting datasets;
+do you know anything about PROMs?
+videos!
+	</script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">	
+## Agenda
+
++ What are PROMs?
++ Different types of PROMs
++ PROMs dataset
+    * overview
+    * data collection and data quality
+    * casemix adjustment
+    * reporting
++ Uses for PROMs
++ Accessing PROMs data
++ Example project using PROMs data
++ Resources
+	</script>
+</section>
+
+
+	
+
+<section data-markdown data-separator-notes="^Note:">
+    <script type="text/template">
+> "The ultimate measure by which to judge the quality of a medical effort is whether it helps patients (and their families) as they see it. Anything done in health care that does not help a patient or family is, by definition, waste, whether or not the professions and their associations traditionally hallow it."  
+(Berwick D, 1997)
+
+Note:
+Donanld Berwick - American specialist in quality improvement in healthcare
+    </script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">	
+	<!-- no easy way of resizing image coded as markdown -->
+	<!-- ![Image of cartoon](images/patientDiedCartoon.jpg) -->
+<image src = "images/patientDiedCartoon.jpg", width = "80%", height = "80%">
+	</script>
+</section>
+ 
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### What are PROMs?
+
+PROMs were developed to complement clinical measures of health and illness. For example, raised blood pressure and high cholesterol are important indicators of health problems, but will not be felt by patients.
+  
+Patient reported outcomes  
+  
+... comprise a series of structured questions that ask patients about their health from their point of view  
+  
+... are completed by patients themselves  
+  
+... do not ask about patients' satisfaction with or experience of health care services, or seek their opinions about how successful their treatment was
+
+*Sometimes referred to as Patient Reported Outcomes (PROs) - same thing.*
+	</script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### History
+
+Used for several decades in clinical and observational studies alongside clinical end-points (important contribution to evidence about new health care technologies).
+
+Often used in the estimation of QALYs.
+
+Long used in population health surveys to provide norms for comparing groups / populations or judging the burden of diseases.
+
+The possibilty of collecting PROMs routinely alongside the devlivery of care was first recognised by BUPA. They asked patients to complete PRO questionnaires before and after a number of elective surgical procedures. The data were used to monitor and benchmark the quality of care by its surgical teams.
+
+In a landmark development in 2009, the NHS introduced the routine collection of PROs from patients, both before and after NHS-funded surgery, for four elective procedures: 
++ hip replacement
++ knee replacement
++ varicose vein
++ hernia
+
+Note:
+QALY - health comprises length + quality of life, 1 QALY = 1 year in perfect health; BUPA story - Rodney Ledward gynaecologist; NHS world first
+    </script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">	
+## Agenda
+
+<ul class="a">
+	<li>What are PROMs?</li>
+	<li style = "color:#657b83">Different types of PROMs</li>
+	<li>PROMs dataset</li>
+	<ul class="a">
+		<li>overview
+		<li>data collection and data quality
+		<li>casemix adjustment
+		<li>reporting
+	</ul class="a">
+	<li>Uses for PROMs</li>
+	<li>Accessing PROMs data</li>
+	<li>Example project using PROMs data</li>
+	<li>Resources</li>
+</ul class="a">
+	</script>
+</section>
+
+
+
+
+<section>
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### Different types of PROs
+
+**GENERIC PROs**  
+These set out to describe or measure health in a way that is general (or generic), so that the same questions can be used for patients with completely different conditions, and so that health and changes in health can be compared across different patient and population groups.
+
+e.g. SF-36, EQ-5D
+
+**CONDITION-SPECIFIC PROs**  
+These measure the severity of a particular condition/disease or some specific aspect of health. The questions focus on the particular sorts of limitations or problems that people can experience as a result of a very specific condition.
+
+e.g. Oxford Hip Score, International Restless Legs Syndrome Study Group Rating Scale
+
+Note:
+generic - ability to compare across conditions;
+profile and index measures;
+SF36 - profile (8-dimension profile, 2 summary meausures), EQ-5D - 2 single index measures (utility individual derives from his/her health status + simple vas)
+	</script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### EuroQol five dimensions questionnaire (EQ-5D)
+
+The EQ-5D-3L is one of the most commonly used generic instruments for general health-status.
+
+Descriptive system of health-related quality of life states consisting of five dimensions (5D) each of which can take one of three responses. 
++ mobility
++ self-care
++ usual activities
++ pain/discomfort
++ anxiety/depression
+
+The responses record three levels of severity (3L) within a particular EQ-5D dimension.
++ no problems
++ some or moderate problems
++ extreme problems
+
+[EuroQol website][EuroQol]
+[EuroQol]: http://www.euroqol.org/
+
+Note:
+HANDOUTS;
+weights derived from surveys using Time-Trade-Off or Standard-Gamble
+	</script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### EuroQol Visual Analogue Scale (EQ VAS)
+
+Standard vertical 20 cm visual analogue scale (similar to a thermometer) for recording an individual's rating for their current health-related quality of life state (often referred to as page 3 of the EQ-5D questionnaire).
+	</script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### Oxford Hip and Knee Scores (OHS and OKS)
+
+The Oxford Hip Score (OHS) comprises 12 questions on activities of daily living and is specifically designed and developed to assess function and pain after total hip replacement (THR) surgery (arthroplasty). 
+
+OKS similar instrument for assessing function and pain after total knee replacement.
+
+OHS and OKS were developed by the Nuffield Department of Population Health at the University of Oxford. [Isis Innovation][Isis] now own the licences for OHS and OKS.
+
+[Isis]: http://isis-innovation.com/ 
+
+Note:
+HANDOUTS
+	</script>
+</section>
+
+
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">	
+## Agenda
+
+<ul class="a">
+	<li>What are PROMs?</li>
+	<li>Different types of PROMs</li>
+	<li style = "color:#657b83">PROMs dataset</li>
+	<ul class="a">
+		<li style = "color:#657b83">overview
+		<li>data collection and data quality
+		<li>casemix adjustment
+		<li>reporting
+	</ul class="a">
+	<li>Uses for PROMs</li>
+	<li>Accessing PROMs data</li>
+	<li>Example project using PROMs data</li>
+	<li>Resources</li>
+</ul class="a">
+	</script>
+</section>
+
+
+
+
+<section>
+	<script type="text/template">	
+## PROMs dataset overview
+	</script>
+		<a href="http://www.youtube.com/watch?feature=player_embedded&v=4Nr_3Ne9RvA" target="_blank">
+		<img src="http://img.youtube.com/vi/4Nr_3Ne9RvA/0.jpg" alt="Introduction to PROMs"/></a>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">	
+## Agenda
+
+<ul class="a">
+	<li>What are PROMs?</li>
+	<li>Different types of PROMs</li>
+	<li style = "color:#657b83">PROMs dataset</li>
+	<ul class="a">
+		<li>overview
+		<li style = "color:#657b83">data collection and data quality
+		<li>casemix adjustment
+		<li>reporting
+	</ul class="a">
+	<li>Uses for PROMs</li>
+	<li>Accessing PROMs data</li>
+	<li>Example project using PROMs data</li>
+	<li>Resources</li>
+</ul class="a">
+	</script>
+</section>
+
+
+
+
+<section>
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### PROMS dataset - data collection and data quality
+
+To become a complete PROMs record that can be used to compare performance across organisations, a number of different requirements must be met.
+
+Remember - participation is voluntary.
+
+1. The patient must complete a pre-operative questionnaire (Q1)
+   
+2. The patient must have the operation
+  
+3. The patient must complete a post-operative questionnaire (Q2)
+  
+4. Data quality in both Q1 and Q2 must be sufficient so that measures like OHS are complete
+  
+5. Patient's identifying information must be complete enough to link the questionnaire data with the procedure data sourced from HES.
+  
+    Where all of these conditions are met, the record is eligible for casemix adjustment
+  
+6. If all casemix adjustment variables are complete then a "modelled" PROMs record is created
+  
+The number of records reduces at each stage.
+	</script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### PROMS data - data collection and data quality
+
+<image src = "images/attritionRate.png", width = "80%", height = "80%">
+	</script>
+</section>
+
+
+<section data-markdown data-separator-notes="^Note:">
+    <script type="text/template">
+### PROMS data - data collection and data quality
+
+<image src = "images/modelledRecords.png", width = "80%", height = "80%">
+	</script>
+</section>
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### PROMS data - data collection and data quality
+
+An "eligible procedure" is counted for each episode in HES in the period in question which has been clinically coded with relevant hip, knee, varicose vein or groin hernia OPCS procedure codes which make it suitable for inclusion in PROMs. 
+
+**Participation rate = Q1 complete / eligible procedures**  
+Watch out for extreme values (100%+ is possible). Main issues relate to provider A administering Q1, but patient has surgery at Provider B (often due to subcontracting arrangements).  
+		c.90% for orthopaedic procedures, much lower for GH and VV
+  
+**Post-operative issue rate = Q2 sent / Q1 complete**    
+Questionnaires are sent out up to three times unless requested not to.  
+90%+ all procedures
+  
+**Linkage rate = Q1 matched to HES episode / Q1 complete**  
+Matching algorithm for linking questionnaires and HES episodes includes the condition that episodes must take place within 18 weeks of Q1 completion date.  
+75-80% for orthopaedic procedures
+
+**Post-operative response rate = Q2 returned / Q2 sent**  
+75-80% for orthopaedic procedures, lower for GH and VV
+
+A successfully linked Q1/Q2/HES record will only become a modelled record if all items required for statistical models are complete. There is a separate model for each measure (EQ-5D, EQ-VAS and the condition specific measures such as the Oxford Scores).
+	</script>
+</section>
+
+
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">	
+## Agenda
+
+<ul class="a">
+	<li>What are PROMs?</li>
+	<li>Different types of PROMs</li>
+	<li style = "color:#657b83">PROMs dataset</li>
+	<ul class="a">
+		<li>overview
+		<li>data collection and data quality
+		<li style = "color:#657b83">casemix adjustment
+		<li>reporting
+	</ul class="a">
+	<li>Uses for PROMs</li>
+	<li>Accessing PROMs data</li>
+	<li>Example project using PROMs data</li>
+	<li>Resources</li>
+</ul class="a">
+	</script>
+</section>
+
+
+
+
+<section>
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### PROMs dataset - casemix adjustment
+
+Casemix (or risk) adjustment models are used to adjust the reported PROMs scores  for the differing complexity of cases faced by providers so that outcomes can be compared across providers on a like-for-like basis.
+
+The models used seek to risk adjust the reported "raw" post-operative follow-up (Q2) scores to reflect the outcomes that would have been achieved had the provider treated a national average casemix of patients. 
+
+The casemix adjustment process has three stages:
+  
+1. Estimation of the impact of control variables
+  
+2. Generation of patient level predicted scores
+  
+3. Aggregation to organisation level and casemix adjustment
+  
+Seperate models are used for each outcome measure for each procedure - condition-specific (e.g. OHS, OKS, AVVQ), EQ-5d, and EQ-VAS. Seperate models are also used for primary and revision hip/knee procedures.
+
+The original models were developed by [Northgate Public Services][Northgate].
+
+[Northgate]: https://www.northgateps.com/
+	</script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### PROMs dataset - casemix adjustment
+
+Lots of potential variables from PROMs questionnaires, HES, linked-HES (e.g. IMD), NJR.
+
++ demographic and other patient characteristics
++ prior health related factors
++ clinical factors
++ patients' attitudes and perceptions
++ socio-economic factors and
++ ~~differences in the quality of healthcare delivered by the provider unit~~
+
+Original models used simple OLS regression to estimate the effect of control variables on Q2 scores.
+Later models use Generalised Least Squares Fixed Effect Models (more sophisticated treatment of provider effect on patient outcomes).
+
+Note:
+type of prosthesis used
+   </script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### PROMs dataset - casemix adjustment
+
+key variables across the models include:  
++ the Q1 baseline scores  
++ time since symptom onset  
++ whether the patient considered themselves disabled  
++ whether the patient had assistance in completing the questionnaire and  
++ whether they had had previous treatment  
++ patient reported comorbidities  
++ Ethnicity (particularly Asian) was an important factor in a number of the models  
+
+Note:
+HANDOUTS
+	</script>
+</section>
+
+
+
+
+
+<section>
+<h3>PROMs dataset - casemix adjustment</h3>
+
+<p style = "margin: 0em 0em 2em 0em">Aggregating patient level scores to the provider level score</p>
+<p>$$Adj Q2_j = Q2_{National Average} + \frac{1}{N}\sum_{i=1}^N(AQ2_{j, i} - PQ2_{j, i})$$<p>
+<p style = "margin: 2em 0em 0em 0em">Where: AQ2<sub><i>j, i</i></sub> is the actual post-operative (Q2 score) for patient <i>i</i> treated at provider <i>j</i> PQ2<sub><i>j, i</i></sub> is the predicted post-operative (Q2 score) for patient <i>i</i> treated at provider <i>j</i> 
+	</script>
+</section>	
+
+
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">	
+## Agenda
+
+<ul class="a">
+	<li>What are PROMs?</li>
+	<li>Different types of PROMs</li>
+	<li style = "color:#657b83">PROMs dataset</li>
+	<ul class="a">
+		<li>overview
+		<li>data collection and data quality
+		<li>casemix adjustment
+		<li style = "color:#657b83">reporting
+	</ul class="a">
+	<li>Uses for PROMs</li>
+	<li>Accessing PROMs data</li>
+	<li>Example project using PROMs data</li>
+	<li>Resources</li>
+</ul class="a">
+	</script>
+</section>
+
+
+
+<section>
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### PROMS dataset - reporting
+
+<image src = "images/improvementRate.jpg", width = "80%", height = "80%">
+
+Note:
+Minimally important difference
+	</script>
+</section>
+
+
+
+
+<section>
+	<script type="text/template">
+## PROMs dataset reporting
+	</script>
+		<a href="http://www.youtube.com/watch?feature=player_embedded&v=iYRzl6Pt3LQ" target="_blank">
+		<img src="http://img.youtube.com/vi/iYRzl6Pt3LQ/0.jpg" alt="Introduction to PROMs"/></a>
+</section>
+
+
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">	
+## Agenda
+
+<ul class="a">
+	<li>What are PROMs?</li>
+	<li>Different types of PROMs</li>
+	<li>PROMs dataset</li>
+	<ul class="a">
+		<li>overview
+		<li>data collection and data quality
+		<li>casemix adjustment
+		<li>reporting
+	</ul class="a">
+	<li style = "color:#657b83">Uses for PROMs</li>
+	<li>Accessing PROMs data</li>
+	<li>Example project using PROMs data</li>
+	<li>Resources</li>
+</ul class="a">
+	</script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### PROMS dataset - uses for PROMs
+
++ informing the choices patients make with regard to their treatment and its providers
+  
++ measuring and benchmarking the performance of health care providers
+  
++ linking the payment received by providers to their performance in improving patient health
+  
++ understanding and managing referral from primary to secondary care
+  
++ facilitating cooperation between clinicians and managers in the delivery of care
+  
++ enabling health care professionals to monitor and improve health care practices
+    
++ regulating for safety and quality in health care services
+
+Note:
+patient choice - which treatment, which hospital, which clinician, PROMs on NHS Choices;
+incentives - BPT for hips / knees;
+referral - points systems, shared decision-making
+	</script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">	
+## Agenda
+
+<ul class="a">
+	<li>What are PROMs?</li>
+	<li>Different types of PROMs</li>
+	<li>PROMs dataset</li>
+	<ul class="a">
+		<li>overview
+		<li>data collection and data quality
+		<li>casemix adjustment
+		<li>reporting
+	</ul class="a">
+	<li>Uses for PROMs</li>
+	<li style = "color:#657b83">Accessing PROMs data</li>
+	<li>Example project using PROMs data</li>
+	<li>Resources</li>
+</ul class="a">
+	</script>
+</section>
+
+
+<section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### Accessing PROMs data
+
+**Public data**  
+HSCIC publish a quarterly statistical release that includes anonymised record level datasets for each of the four main procedures for PROMs records successfully linked to HES (.csv files).
+These only include data from the 2 PROMs questionnaires NOT any information from HES.
+Information on age and sex is often suppressed; age is presented in 10-year bands.
+
+**HSCIC extracts**  
+We also receive extracts of the full PROMs dataset from HSCIC - these can be linked to HES (for recent years we only have data on Hips and Knees - but these tend to be the procedures that receive the most interest).
+	</script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### Accessing PROMs data
+
+<pre><code data-trim>
+SELECT 
+	proms.[proms_serial_no]
+	, proms.[epikey]
+	, proms.[hes_year]
+	, hes.[encrypted_hesid]
+
+FROM  [PaulS].[extract_mids_csu_1415] proms
+	inner join [HESData].[dbo].[tbInpatients1415] hes
+		on cast(proms.epikey as varchar) = hes.epikey 
+
+WHERE
+	proms.[hes_year] = '1415'
+	
+-- #115,971
+</code></pre>
+	</script>
+</section>
+
+
+</section>
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">	
+## Agenda
+
+<ul class="a">
+	<li>What are PROMs?</li>
+	<li>Different types of PROMs</li>
+	<li>PROMs dataset</li>
+	<ul class="a">
+		<li>overview
+		<li>data collection and data quality
+		<li>casemix adjustment
+		<li>reporting
+	</ul class="a">
+	<li>Uses for PROMs</li>
+	<li>Accessing PROMs data</li>
+	<li style = "color:#657b83">Example project using PROMs data</li>
+	<li>Resources</li>
+</ul class="a">
+	</script>
+</section>
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">	
+### Example project using PROMs data
+
+<image src = "images/SouthWarwickshirePromsReport.png", width = "80%", height = "80%">  	
+	</script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">	
+## Agenda
+
+<ul class="a">
+	<li>What are PROMs?</li>
+	<li>Different types of PROMs</li>
+	<li>PROMs dataset</li>
+	<ul class="a">
+		<li>overview
+		<li>data collection and data quality
+		<li>casemix adjustment
+		<li>reporting
+	</ul class="a">
+	<li>Uses for PROMs</li>
+	<li>Accessing PROMs data</li>
+	<li>Example project using PROMs data</li>
+	<li style = "color:#657b83">Resources</li>
+</ul class="a">
+	</script>
+</section>
+
+
+
+
+<section data-markdown data-separator-notes="^Note:">
+	<script type="text/template">
+### Resources
+[HSCIC PROMs homepage][PromsPage]  
+[PROMs guide][PromsGuide]  
+[PROMs data dictionary][PromsDataDictionary]   
+[PROMs casemix adjustment NHSE][PromsCasemixNHSE]   
+[PROMs casemix adjustment DH][PromsCasemixDH]  
+[Original report][lhstmReport] from London School of Hygiene and Tropical Medicine for DH to inform PROMs programme   
+[Getting the Most Out of PROMS, Devlin & Appleby][gettingMostFromProms]  
+[John Appleby][JohnAppleby] is a prominent advocate for PROMs data in the NHS  
+[@jappleby123][JohnApplebyTwitter]
+
+[PromsPage]: http://www.hscic.gov.uk/proms
+[PromsGuide]: http://www.hscic.gov.uk/media/1537/A-Guide-to-PROMs-Methodology/pdf/PROMs_Guide_V10.pdf
+[PromsDataDictionary]: http://www.hscic.gov.uk/media/1361/HES-Hospital-Episode-Statistics-PROMS-Data-Dictionary/pdf/Proms_Data_Dictionary.pdf
+[PromsCasemixNHSE]: https://www.england.nhs.uk/statistics/statistical-work-areas/proms/
+[PromsCasemixDH]: https://www.gov.uk/government/publications/patient-reported-outcome-measures-proms-in-england-the-case-mix-adjustment-methodology
+[lhstmReport]: https://www.lshtm.ac.uk/php/departmentofhealthservicesresearchandpolicy/assets/proms_report_12_dec_07.pdf
+[gettingMostFromProms]:https://www.kingsfund.org.uk/sites/files/kf/Getting-the-most-out-of-PROMs-Nancy-Devlin-John-Appleby-Kings-Fund-March-2010.pdf
+[JohnAppleby]: http://www.kingsfund.org.uk/about-us/whos-who/john-appleby
+[JohnApplebyTwitter]: https://twitter.com/jappleby123
+	</script>
+</section>
+
+
+
+
+		</div>
+	</div>
+	
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script src="introductiontoPromsReveal-init.js"></script>
+		
+    </body>
+</html>
+
+
